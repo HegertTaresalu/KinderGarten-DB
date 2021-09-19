@@ -7,18 +7,25 @@ namespace TARge20.Core.Domain
 {
     public class Employee
     {
+
+        [Key]
+        public Guid Id { get; set; }
+        
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
 
-        [Key]
-        public Guid Id { get; set; }
 
         [ForeignKey("WorkerID")]
         public Guid WorkerId { get; set; }
 
 
-
+        public List<Groups> Groups;
+        public List<Cook> Cooks;
+        public List<KinderGarden> KinderGardens;
+        public List<Methodologist> methodologists;
+        public List<Educators> Educators;
+        public List<Senior_Educator> Senior_Educators;
 
 
 

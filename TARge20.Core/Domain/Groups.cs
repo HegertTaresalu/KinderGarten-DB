@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace TARge20.Core.Domain
 {
-    class Groups
+   public class Groups
     {
+        [Key]
+        public Guid Id { get; set; }
+
         public string Name { get; set; }
         public string Type { get; set; }
 
@@ -24,9 +28,19 @@ namespace TARge20.Core.Domain
 
 
         [ForeignKey("Available_Spots")]
+
         public int Available_Spots { get; set; }
 
-    
+        public List<Employee> Employees;
+
+        public List<Queue> Queues;
+
+        public List<Children> Childrens;
+
+
+
+
+
 
 
     }

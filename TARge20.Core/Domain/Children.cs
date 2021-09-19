@@ -8,9 +8,15 @@ namespace TARge20.Core.Domain
 {
     public class Children
     {
+        [Key]
+        public Guid Id { get; set; }
+
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
         public Guid Child_Id { get; set; }
+
+        [ForeignKey("Parent_Id")]
+        public Guid Parent_Id { get; set; }
 
         public string Current_Group { get; set; }
 
@@ -21,6 +27,6 @@ namespace TARge20.Core.Domain
     
         public Guid Former_Group_Id { get; set; }
 
-
+        public List<Parent> Parents;
     }
 }
